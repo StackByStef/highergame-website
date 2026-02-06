@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-W8DFTPGCXQ"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-W8DFTPGCXQ');
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Higher Game Podcast</title>
+  <meta name="description" content="I lost my mind at a game of Candyland when I was four. Now at 54, I'm playing for higher stakes. Higher Game is the podcast for obsessive learners, late-blooming tech entrepreneurs, and women over 50 rewriting the rules.">
+  <meta property="og:title" content="Higher Game Podcast">
+  <meta property="og:description" content="I lost my mind at a game of Candyland when I was four. Now at 54, I'm playing for higher stakes.">
+  <meta property="og:image" content="cover.png">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://highergamepodcast.com">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      background: #000;
+      color: #fff;
+      font-family: 'Inter', sans-serif;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    /* Hero */
+    .hero {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      padding: 60px 24px;
+      text-align: center;
+      position: relative;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: radial-gradient(ellipse at center, rgba(180, 60, 80, 0.08) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .cover-art {
+      width: 320px;
+      height: 320px;
+      border-radius: 16px;
+      box-shadow: 0 20px 60px rgba(180, 60, 80, 0.2), 0 0 100px rgba(180, 60, 80, 0.05);
+      margin-bottom: 40px;
+      transition: transform 0.3s ease;
+    }
+
+    .cover-art:hover {
+      transform: scale(1.02);
+    }
+
+    .podcast-title {
+      font-family: 'Cinzel', serif;
+      font-size: 3rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      margin-bottom: 16px;
+      background: linear-gradient(135deg, #fff 0%, #c9a0a0 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .tagline {
+      font-size: 1.1rem;
+      font-weight: 300;
+      color: #999;
+      letter-spacing: 0.05em;
+      margin-bottom: 12px;
+    }
+
+    .host {
+      font-size: 0.95rem;
+      font-weight: 400;
+      color: #666;
+      margin-bottom: 48px;
+    }
+
+    /* About section */
+    .about-section {
+      max-width: 560px;
+      width: 100%;
+      margin-bottom: 48px;
+      text-align: center;
+    }
+
+    .about-text {
+      font-size: 0.95rem;
+      font-weight: 300;
+      color: #999;
+      line-height: 1.8;
+      margin-bottom: 16px;
+    }
+
+    .about-closer {
+      font-family: 'Cinzel', serif;
+      font-size: 1rem;
+      font-weight: 600;
+      color: #b43c50;
+      letter-spacing: 0.03em;
+      margin-top: 24px;
+      margin-bottom: 0;
+    }
+
+    /* Subscribe buttons */
+    .subscribe-section {
+      margin-bottom: 48px;
+    }
+
+    .subscribe-label {
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: #555;
+      margin-bottom: 20px;
+    }
+
+    .subscribe-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 12px;
+      margin-top: 16px;
+    }
+
+    .subscribe-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 24px;
+      border: 1px solid #333;
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.03);
+      color: #ccc;
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 500;
+      transition: all 0.2s ease;
+      backdrop-filter: blur(10px);
+    }
+
+    .subscribe-btn:hover {
+      border-color: #666;
+      background: rgba(255, 255, 255, 0.08);
+      color: #fff;
+      transform: translateY(-1px);
+    }
+
+    .subscribe-btn svg {
+      width: 20px;
+      height: 20px;
+      fill: currentColor;
+    }
+
+    /* Episode preview */
+    .episode-preview {
+      max-width: 560px;
+      width: 100%;
+      padding: 32px;
+      border: 1px solid #1a1a1a;
+      border-radius: 12px;
+      background: rgba(255, 255, 255, 0.02);
+      margin-bottom: 48px;
+      text-align: left;
+    }
+
+    .episode-label {
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: #b43c50;
+      margin-bottom: 8px;
+    }
+
+    .episode-title {
+      font-family: 'Cinzel', serif;
+      font-size: 1.4rem;
+      font-weight: 600;
+      margin-bottom: 12px;
+    }
+
+    .episode-desc {
+      font-size: 0.9rem;
+      font-weight: 300;
+      color: #888;
+      line-height: 1.7;
+    }
+
+    .coming-soon-badge {
+      display: inline-block;
+      margin-top: 16px;
+      padding: 6px 14px;
+      border: 1px solid #333;
+      border-radius: 20px;
+      font-size: 0.75rem;
+      font-weight: 500;
+      color: #666;
+      letter-spacing: 0.1em;
+    }
+
+    /* Email signup */
+    .email-section {
+      max-width: 480px;
+      width: 100%;
+      margin-bottom: 48px;
+      text-align: center;
+    }
+
+    .email-heading {
+      font-family: 'Cinzel', serif;
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+
+    .email-sub {
+      font-size: 0.85rem;
+      color: #666;
+      margin-bottom: 20px;
+    }
+
+    .email-form {
+      display: flex;
+      gap: 8px;
+    }
+
+    .email-input {
+      flex: 1;
+      padding: 14px 18px;
+      border: 1px solid #333;
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.03);
+      color: #fff;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.9rem;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+
+    .email-input::placeholder {
+      color: #555;
+    }
+
+    .email-input:focus {
+      border-color: #b43c50;
+    }
+
+    .email-submit {
+      padding: 14px 24px;
+      border: none;
+      border-radius: 8px;
+      background: #b43c50;
+      color: #fff;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.9rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.2s;
+      white-space: nowrap;
+    }
+
+    .email-submit:hover {
+      background: #d14a60;
+    }
+
+    /* Social */
+    .social-links {
+      display: flex;
+      gap: 24px;
+      margin-bottom: 48px;
+    }
+
+    .social-link {
+      color: #555;
+      transition: color 0.2s;
+    }
+
+    .social-link:hover {
+      color: #fff;
+    }
+
+    .social-link svg {
+      width: 24px;
+      height: 24px;
+      fill: currentColor;
+    }
+
+    /* Footer */
+    .footer {
+      font-size: 0.75rem;
+      color: #333;
+      padding-bottom: 20px;
+    }
+
+    /* Mobile */
+    @media (max-width: 600px) {
+      .cover-art {
+        width: 260px;
+        height: 260px;
+      }
+      .podcast-title {
+        font-size: 2rem;
+      }
+      .email-form {
+        flex-direction: column;
+      }
+      .subscribe-buttons {
+        flex-direction: column;
+        align-items: center;
+      }
+      .subscribe-btn {
+        width: 220px;
+        justify-content: center;
+      }
+    }
+  </style>
+</head>
+<body>
+  <section class="hero">
+
+    <img src="cover.png" alt="Higher Game Podcast Cover Art" class="cover-art">
+
+    <h1 class="podcast-title">HIGHER GAME</h1>
+    <p class="tagline">354 days. 33,116 messages. One woman who refused to lose.</p>
+    <p class="host">Hosted by Stephanie Belote</p>
+
+    <!-- About -->
+    <div class="about-section">
+      <p class="about-text">
+        I lost my mind at a game of Candyland when I was four. Now at 54, I'm playing for higher stakes.
+      </p>
+      <p class="about-text">
+        Higher Game is the podcast for people building something from nothing using AI, grit, and the refusal to stay on someone else's board. A 54-year-old woman with no tech background who built an AI memory engine and taught herself to code&mdash;documenting every conversation, every pattern, every breakthrough over 354 days inside Cortex, her own agentic AI memory system. Cortex doesn't just store information&mdash;it finds patterns across years of data that no human brain could hold at once.
+      </p>
+      <p class="about-text">
+        This is an obsessive look at systems building from the inside out. From pattern recognition to AI automation, it's a show for the obsessive learners, the late-blooming tech entrepreneurs, and the women over 50 rewriting the rules.
+      </p>
+      <p class="about-closer">The most dangerous person in any room is the one nobody saw coming.</p>
+    </div>
+
+    <!-- Subscribe -->
+    <div class="subscribe-section">
+      <p class="subscribe-label">Listen &amp; Subscribe</p>
+      <div class="subscribe-buttons">
+        <a href="#" class="subscribe-btn" title="Apple Podcasts">
+          <svg viewBox="0 0 24 24"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.988 3.657 9.128 8.438 9.879v-1.023c-4.178-.731-7.35-4.393-7.35-8.856 0-4.91 3.991-8.9 8.912-8.9s8.912 3.99 8.912 8.9c0 4.463-3.172 8.125-7.35 8.856v1.023C18.343 21.128 22 16.988 22 12c0-5.523-4.477-10-10-10zm0 4.5a2 2 0 100 4 2 2 0 000-4zm-1.5 8.5c0-.966.534-1.809 1.5-2.209.966.4 1.5 1.243 1.5 2.209v3.5c0 .828-.672 1.5-1.5 1.5s-1.5-.672-1.5-1.5V15z"/></svg>
+          Apple Podcasts
+        </a>
+        <a href="#" class="subscribe-btn" title="Spotify">
+          <svg viewBox="0 0 24 24"><path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm4.586 14.424a.623.623 0 01-.857.207c-2.348-1.435-5.304-1.76-8.785-.964a.623.623 0 11-.277-1.215c3.809-.87 7.076-.496 9.713 1.115a.623.623 0 01.206.857zm1.224-2.719a.78.78 0 01-1.072.257c-2.687-1.652-6.786-2.131-9.965-1.166a.78.78 0 01-.452-1.492c3.63-1.102 8.147-.568 11.232 1.329a.78.78 0 01.257 1.072zm.105-2.835C14.692 8.95 9.375 8.775 6.297 9.71a.935.935 0 11-.543-1.79c3.532-1.072 9.404-.865 13.115 1.338a.935.935 0 01-.954 1.612z"/></svg>
+          Spotify
+        </a>
+        <a href="#" class="subscribe-btn" title="YouTube">
+          <svg viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+          YouTube
+        </a>
+        <a href="#" class="subscribe-btn" title="Amazon Music">
+          <svg viewBox="0 0 24 24"><path d="M13.958 10.09c0 1.232.029 2.256-.591 3.351-.502.891-1.301 1.438-2.186 1.438-1.214 0-1.922-.924-1.922-2.292 0-2.692 2.415-3.182 4.7-3.182v.685zm3.186 7.705a.659.659 0 01-.75.075c-1.053-.875-1.242-1.281-1.819-2.115-1.739 1.773-2.971 2.304-5.227 2.304-2.669 0-4.748-1.647-4.748-4.942 0-2.573 1.394-4.327 3.379-5.183 1.72-.756 4.125-.891 5.964-1.098v-.41c0-.753.058-1.642-.384-2.292-.384-.578-1.124-.816-1.776-.816-1.207 0-2.282.619-2.546 1.902-.054.285-.261.566-.547.58l-3.065-.33c-.258-.058-.544-.266-.47-.66C5.771 1.866 8.83.75 11.587.75c1.394 0 3.216.371 4.315 1.428 1.394 1.305 1.261 3.049 1.261 4.942v4.476c0 1.345.558 1.935 1.082 2.661.184.261.225.574-.012.768-.593.495-1.648 1.415-2.228 1.931l-.006-.006z"/><path d="M21.894 19.52C19.477 21.384 15.87 22.5 12.715 22.5c-4.455 0-8.467-1.647-11.498-4.387-.238-.216-.025-.51.261-.343 3.275 1.904 7.326 3.049 11.509 3.049 2.821 0 5.925-.585 8.783-1.796.431-.185.793.283.124.497z"/></svg>
+          Amazon
+        </a>
+      </div>
+    </div>
+
+    <!-- Episode 1 Preview -->
+    <div class="episode-preview">
+      <p class="episode-label">Episode 1</p>
+      <h2 class="episode-title">Candyland</h2>
+      <p class="episode-desc">
+        When I was four, my mother tried to teach me to lose at Candyland. I lost my mind instead. Fifty years later, I built Cortex&mdash;and it showed me patterns I'd been blind to for decades. This is the origin story.
+      </p>
+      <span class="coming-soon-badge">Coming Soon</span>
+    </div>
+
+    <!-- Email Signup -->
+    <div class="email-section">
+      <h3 class="email-heading">Get Notified When Episode 1 Drops</h3>
+      <p class="email-sub">No spam. Just the signal.</p>
+      <form class="email-form" id="notify-form">
+        <input type="email" id="email-input" class="email-input" placeholder="your@email.com" required>
+        <button type="submit" class="email-submit" id="submit-btn">Notify Me</button>
+      </form>
+      <p id="form-status" style="margin-top: 12px; font-size: 0.85rem; color: #666; display: none;"></p>
+      <script>
+        const SUPABASE_URL = 'https://eyqhnijwanhhxzitkyhn.supabase.co';
+        const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImV5cWhuaWp3YW5oaHh6aXRreWhuIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Njg1NzIzOTgsImV4cCI6MjA4NDE0ODM5OH0.Wu1RMtltWoNZP7Icl4LdzRyaBPYRXVZAMd3CRur7Jbo';
+
+        document.getElementById('notify-form').addEventListener('submit', async function(e) {
+          e.preventDefault();
+          const email = document.getElementById('email-input').value;
+          const btn = document.getElementById('submit-btn');
+          const status = document.getElementById('form-status');
+
+          btn.disabled = true;
+          btn.textContent = 'Sending...';
+
+          try {
+            const res = await fetch(SUPABASE_URL + '/rest/v1/email_subscribers', {
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/json',
+                'apikey': SUPABASE_KEY,
+                'Authorization': 'Bearer ' + SUPABASE_KEY,
+                'Prefer': 'return=minimal'
+              },
+              body: JSON.stringify({ email: email, source: 'website' })
+            });
+
+            if (res.ok) {
+              status.style.display = 'block';
+              status.style.color = '#b43c50';
+              status.textContent = "You're in. We'll notify you when Episode 1 drops.";
+              document.getElementById('email-input').value = '';
+            } else if (res.status === 409) {
+              status.style.display = 'block';
+              status.style.color = '#666';
+              status.textContent = "You're already on the list.";
+            } else {
+              throw new Error('Server error');
+            }
+          } catch (err) {
+            status.style.display = 'block';
+            status.style.color = '#666';
+            status.textContent = 'Something went wrong. Try again.';
+          }
+
+          btn.disabled = false;
+          btn.textContent = 'Notify Me';
+        });
+      </script>
+    </div>
+
+    <!-- Social Links -->
+    <div class="social-links">
+      <a href="https://instagram.com/HigherGamePodcast" class="social-link" title="Instagram" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+      </a>
+      <a href="https://x.com/highergamepod" class="social-link" title="X" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+      </a>
+      <a href="https://youtube.com/@HigherGamePodcast" class="social-link" title="YouTube" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+      </a>
+    </div>
+
+    <p class="footer">&copy; 2026 Higher Game Podcast. All rights reserved.</p>
+  </section>
+</body>
+</html>
